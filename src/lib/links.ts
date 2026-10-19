@@ -1,4 +1,4 @@
-export const APP_URL = (import.meta.env.VITE_APP_URL || 'http://localhost:5173').replace(/\/$/, '');
+export const APP_URL = (import.meta.env.VITE_APP_URL || 'http://localhost:8080').replace(/\/$/, '');
 
 export const appLinks = {
   login: `${APP_URL}/auth`,
