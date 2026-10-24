@@ -1,15 +1,17 @@
 import { useEffect, useState } from 'react';
+import { findSitePage } from './content/site-pages';
 import { AboutSection } from './components/AboutSection';
 import { FaqSection } from './components/FaqSection';
 import { FeatureShowcase } from './components/FeatureShowcase';
 import { FinalCta } from './components/FinalCta';
 import { Footer } from './components/Footer';
+import { InfoPage } from './components/InfoPage';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { HowItWorks } from './components/HowItWorks';
 import { PlansSection } from './components/PlansSection';
 
-export default function App() {
+function HomePage() {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
@@ -82,4 +84,10 @@ export default function App() {
       <Footer />
     </>
   );
+}
+
+export default function App() {
+  const page = findSitePage(window.location.pathname);
+  if (page) return <InfoPage page={page} />;
+  return <HomePage />;
 }

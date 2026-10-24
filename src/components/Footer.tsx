@@ -3,26 +3,38 @@ import { appLinks } from '../lib/links';
 import { Logo } from './Logo';
 
 const footerLinks = [
-  { label: 'Recursos', href: '#recursos' },
-  { label: 'Como funciona', href: '#como-funciona' },
-  { label: 'Planos', href: '#planos' },
-  { label: 'Quem somos', href: '#quem-somos' },
-  { label: 'Dúvidas', href: '#duvidas' },
+  { label: 'Recursos', href: '/#recursos' },
+  { label: 'Como funciona', href: '/#como-funciona' },
+  { label: 'Planos', href: '/#planos' },
+  { label: 'Quem somos', href: '/#quem-somos' },
+  { label: 'Dúvidas', href: '/#duvidas' },
+];
+
+const helpLinks = [
+  { label: 'Guia de uso', href: '/guia' },
+  { label: 'Política de privacidade', href: '/privacidade' },
+  { label: 'Termos de uso', href: '/termos' },
 ];
 
 export function Footer() {
   return (
     <footer className="bg-ink px-5 pb-8 pt-14 text-slate-300 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-10 border-b border-white/10 pb-12 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
+        <div className="grid gap-10 border-b border-white/10 pb-12 md:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
           <div>
-            <Logo inverse />
+            <Logo inverse href="/" />
             <p className="mt-5 max-w-sm text-sm leading-6 text-slate-400">Gestão simples para pequenos negócios venderem, organizarem e crescerem com mais clareza.</p>
           </div>
           <div>
             <h2 className="text-xs font-bold uppercase tracking-[0.16em] text-white">Navegação</h2>
             <nav className="mt-4 grid grid-cols-2 gap-x-5 gap-y-3 text-sm" aria-label="Navegação do rodapé">
               {footerLinks.map((link) => <a key={link.href} href={link.href} className="transition-colors hover:text-primary-300">{link.label}</a>)}
+            </nav>
+          </div>
+          <div>
+            <h2 className="text-xs font-bold uppercase tracking-[0.16em] text-white">Ajuda</h2>
+            <nav className="mt-4 grid gap-3 text-sm" aria-label="Links úteis">
+              {helpLinks.map((link) => <a key={link.href} href={link.href} className="transition-colors hover:text-primary-300">{link.label}</a>)}
             </nav>
           </div>
           <div>

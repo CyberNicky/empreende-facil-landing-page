@@ -36,7 +36,7 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
-        <Logo />
+        <Logo href={window.location.pathname === '/' ? '#inicio' : '/'} />
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Navegação principal">
           {navItems.map((item) => (
